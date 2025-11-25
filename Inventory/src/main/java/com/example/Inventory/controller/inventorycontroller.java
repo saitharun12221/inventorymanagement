@@ -48,6 +48,7 @@ public class inventorycontroller {
         i1.setprice(item.getprice());
         i1.setstock(item.getstock());
         i1.setcategory(item.getcategory());
+        i1.setsubCategory(item.getsubCategory());
         i1.setstatus(item.getstatus());
         return repo.save(i1);
     }

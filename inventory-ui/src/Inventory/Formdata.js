@@ -117,9 +117,9 @@ function Formdata({itemsPerPageDefault=5}){
                     <label>SubCategory</label>
                     <input type="text" placeholder="SubCategory" {...register("subCategory",{
                         required:"subCategory is invalid",
-                        minLength:{value:3,message:"Category should be atleast 3 characters"}
+                        minLength:{value:3,message:"subCategory should be atleast 3 characters"}
                     })}/>
-                    {errors.category&&<p style={{color:"red"}}>{errors.category.message}</p>}
+                    {errors.subCategory&&<p style={{color:"red"}}>{errors.subCategory.message}</p>}
                 </div>
                 <div className="col-md-3">
                     <label>Status</label>
