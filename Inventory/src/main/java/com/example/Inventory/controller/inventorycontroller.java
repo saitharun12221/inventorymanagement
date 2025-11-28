@@ -176,7 +176,7 @@ public class inventorycontroller {
     @GetMapping("/categories/{category}/products")
     public ResponseEntity<?> getProductsByCategory(
             @PathVariable String category,
-            @RequestParam(required = false) String subCategory,
+            @RequestParam(required=false) String subCategory,
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "20") int limit) {
 
@@ -184,16 +184,16 @@ public class inventorycontroller {
             // Calculate offset
             int offset = (page - 1) * limit;
 
-            // Get products with pagination
-            List<inventory> products; // Fixed: "Inventory" not "inventory"
-            if (subCategory != null && !subCategory.isEmpty()) {
+            // Get products with pagination// Fixed: "Inventory" not "inventory"
+              List<inventory> products;
+              if (subCategory!=null && !subCategory.isEmpty()){
                 products = repo.findByCategoryAndSubCategoryWithPagination(
                     category, subCategory, limit, offset);
-            } else {
-                products = repo.findByCategoryWithPagination(
-                    category, limit, offset);
-            }
-
+              } 
+              else{
+                products=repo.findByCategoryWithPagination(category, limit, offset);
+              }
+            
             // Get total count
             long totalProducts;
             if (subCategory != null && !subCategory.isEmpty()) {

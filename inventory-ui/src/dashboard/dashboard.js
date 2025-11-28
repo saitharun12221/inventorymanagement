@@ -174,16 +174,8 @@ const Dashboard = () => {
             <div className="opacity-75">Total Products</div>
           </div>
         </div>
-        <div className="col-md-3">
-          <div className="text-center">
-            <div className="h2 fw-bold">
-              {categories.find(c => c.category === selectedCategory)?.total_stock || 0}
-            </div>
-            <div className="opacity-75">Total Stock</div>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
   </div>
 )}
 
